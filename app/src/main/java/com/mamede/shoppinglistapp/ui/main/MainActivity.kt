@@ -1,4 +1,4 @@
-package com.mamede.shoppinglistapp
+package com.mamede.shoppinglistapp.ui.main
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

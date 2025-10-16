@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.mamede.shoppinglistapp.data.local.dao.ShoppingItemDao
-import com.mamede.shoppinglistapp.data.local.entity.ShoppingItem
+import com.mamede.shoppinglistapp.data.local.entity.ShoppingItemEntity
 
 /**
  * Classe principal da Base de dados para o Room
@@ -13,11 +13,11 @@ import com.mamede.shoppinglistapp.data.local.entity.ShoppingItem
  * Serve como ponto de entrada para a base de dados
  *@Database A anotação que define as entitys e a versão do schema
  */
-@Database(entities = [ShoppingItem::class], version = 1, exportSchema = false)
+@Database(entities = [ShoppingItemEntity::class], version = 1, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
 
     /**
-     * Metodo abstrato que retorna o DAO para a entidade ShoppingItem
+     * Metodo abstrato que retorna o DAO para a entidade ShoppingItemEntity
      */
     abstract fun shoppingItemDao(): ShoppingItemDao
 

@@ -3,6 +3,7 @@ package com.mamede.shoppinglistapp.data.local.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.mamede.shoppinglistapp.domain.ShoppingItem
 
 /**
  * Representa a tabela "shopping_items" na nossa base de dados.
@@ -15,7 +16,7 @@ import androidx.room.PrimaryKey
  */
 
 @Entity(tableName = "shopping_items")
-data class ShoppingItem(
+data class ShoppingItemEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val name: String,
@@ -24,4 +25,11 @@ data class ShoppingItem(
 
     @ColumnInfo(name = "is_in_cart")
     val isInCart: Boolean = false
-)
+){
+    /**
+     * FUnção mapeadora para converter a Entendidade em um objeto de dominio
+     * De dados para aplicação
+     */
+    fun toDomain(): ShoppingItem = ShoppingItem(id, name, quantity, price, isInCart)
+
+}
