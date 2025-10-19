@@ -1,4 +1,4 @@
-# Lista de Compras Inteligente (ShoppingListApp)
+# Projeto avaliativo de Persistência de Dados (D1PDD)
 
 ## Descrição do Projeto
 
