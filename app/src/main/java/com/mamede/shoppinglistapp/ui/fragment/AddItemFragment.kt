@@ -68,6 +68,13 @@ class AddItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //valida o titulo no edit ou add mode
+        if (args.itemId != -1L){
+            // se tem id então edite
+            requireActivity().title = "Editar Item"
+        } else {
+            requireActivity().title = "Adicionar Item"
+        }
         //vrf se um id de edit e carrega os dados
         viewModel.loadItem(args.itemId)
 
@@ -81,7 +88,7 @@ class AddItemFragment : Fragment() {
      * Set a visbilidade inicial dos campos e preenche os dados na edição
      */
     private fun setupViewsBaseOnMode(){
-        if (args.itemId == -1L) {
+        if (args.itemId != -1L) {
             //edit mode
             binding.tilItemPrice.visibility = View.VISIBLE //show o campo preço
 
@@ -92,14 +99,14 @@ class AddItemFragment : Fragment() {
                         item?.let {
                             binding.etItemName.setText(it.name)
                             binding.etItemQuantity.setText(it.quantity)
-                            binding.edItemPrice.setText(it.price?.toString() ?: "")
+                            binding.etItemPrice.setText(it.price?.toString() ?: "")
                         }
                     }
                 }
             }
         } else {
             //add mode
-            binding.tilItemPrice.visibility = View.GONE //esconde o campo de preço
+            binding.tilItemPrice.visibility = View.VISIBLE
         }
     }
 
@@ -110,7 +117,7 @@ class AddItemFragment : Fragment() {
         binding.buttonSaveItem.setOnClickListener {
             viewModel.saveItem(binding.etItemName.text.toString(),
                 binding.etItemQuantity.text.toString(),
-                binding.edItemPrice.text.toString())
+                binding.etItemPrice.text.toString())
         }
     }
 
@@ -141,7 +148,7 @@ class AddItemFragment : Fragment() {
     private fun setupInputListeners() {
         binding.etItemName.addTextChangedListener { binding.tilItemName.error = null }
         binding.etItemQuantity.addTextChangedListener { binding.tilItemQuantity.error = null }
-        binding.edItemPrice.addTextChangedListener { binding.tilItemPrice.error = null }
+        binding.etItemPrice.addTextChangedListener { binding.tilItemPrice.error = null }
     }
 
     /**

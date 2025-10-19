@@ -19,7 +19,8 @@ import java.util.Locale
  */
 class ShoppingItemAdapter(
     private val onItemCheckedChange: (ShoppingItem, Boolean) -> Unit
-) : ListAdapter<ShoppingItem, ShoppingItemAdapter.ShoppingItemViewHolder>(ShoppingItemDiffCallback()) {
+) : ListAdapter<ShoppingItem, ShoppingItemAdapter.ShoppingItemViewHolder>(ShoppingItemDiffCallback())
+{
 
     private var onItemClickListener: ((ShoppingItem) -> Unit)? = null
 
@@ -129,7 +130,7 @@ class ShoppingItemAdapter(
         val item = getItem(position)
             holder.bind(item)
         }
-    }
+}
 
 
 /**
