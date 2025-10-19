@@ -2,7 +2,6 @@ package com.mamede.shoppinglistapp.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.util.copy
 import com.mamede.shoppinglistapp.data.repository.ShoppingItemRepository
 import com.mamede.shoppinglistapp.domain.ShoppingItem
 import kotlinx.coroutines.flow.MutableSharedFlow

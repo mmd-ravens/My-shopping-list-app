@@ -129,7 +129,7 @@ class ShoppingItemAdapter(
         val item = getItem(position)
             holder.bind(item)
         }
-    }
+}
 
 
 /**
