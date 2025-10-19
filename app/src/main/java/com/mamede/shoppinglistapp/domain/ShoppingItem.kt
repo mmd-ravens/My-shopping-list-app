@@ -7,7 +7,7 @@ import com.mamede.shoppinglistapp.data.local.entity.ShoppingItemEntity
  * Objeto que as fragments e viewmodel vão usar
  * Não contém anotações do Room
  */
-class ShoppingItem(
+data class ShoppingItem(
     val id: Long = 0,
     val name: String,
     val quantity: String,

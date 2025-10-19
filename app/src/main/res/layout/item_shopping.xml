@@ -16,7 +16,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/textItemQuantity"
+            android:id="@+id/textViewItemQuantity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"

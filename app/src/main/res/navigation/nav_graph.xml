@@ -8,15 +8,26 @@
     <fragment
         android:id="@+id/shoppingListFragment"
         android:name="com.mamede.shoppinglistapp.ui.fragment.ShoppingListFragment"
-        android:label="fragment_shopping_list"
+        android:label="@string/my_shopping_list"
         tools:layout="@layout/fragment_shopping_list" >
         <action
             android:id="@+id/action_shoppingListFragment_to_addItemFragment3"
-            app:destination="@id/addItemFragment" />
+            app:destination="@id/addItemFragment">
+            <argument
+                android:name="itemId"
+                app:argType="long"
+                android:defaultValue="-1L" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/addItemFragment"
         android:name="com.mamede.shoppinglistapp.ui.fragment.AddItemFragment"
-        android:label="fragment_add_item"
-        tools:layout="@layout/fragment_add_item" />
+        android:label="@string/add_new_shopping_list"
+        tools:layout="@layout/fragment_add_item">
+
+        <argument
+            android:name="itemId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
 </navigation>

@@ -5,4 +5,10 @@
     <string name="empty_shopping_list">Sua lista está vazia. \nClieque no \'+\' para adicionar itens!</string>
     <string name="total_in_cart_label">Total no carrinho:</string>
     <string name="add_new_item">Adicionar novo item</string>
+    <string name="my_shopping_list">Minha lista de compras</string>
+    <string name="add_new_shopping_list">Adicionar Item</string>
+    <string name="hint_item_name">Nome do item</string>
+    <string name="hint_item_quantity">Quantidade (ex: 1kg, 2 un)</string>
+    <string name="hint_item_price">Preço (R$)</string>
+    <string name="button_save">Salvar</string>
 </resources>
